@@ -28,7 +28,7 @@
       </p>
 
       <form id="denunciaForm">
-        <label>Que tipo de situação você deseja relatar? *</label>
+        <label>Que tipo de situação você deseja relatar? </label>
         <select id="tipoSituacao" required>
           <option value="">Selecione</option>
           <option>Assédio Moral</option>
@@ -39,13 +39,16 @@
           <option>Uso de substâncias ilícitas no ambiente de trabalho</option>
           <option>Outra</option>
         </select>
-        <label>Nome da empresa:</label>
+        <label>Endereço da empresa: </label>
+        <input type="text" id="endereco" required />
+
+        <label>Nome da empresa: </label>
         <input type="text" id="empresa" required />
 
         <label>CNPJ da empresa (não obrigatório):</label>
         <input type="text" id="cnpj" />
-        
-        <label>Descreva com detalhes o que aconteceu? *</label>
+
+        <label>Descreva com detalhes o que aconteceu? </label>
         <textarea id="descricao" required></textarea>
 
         <label>Deseja sugerir alguma ação ou medida?</label>

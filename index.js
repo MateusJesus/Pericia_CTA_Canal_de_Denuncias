@@ -36,12 +36,16 @@ form.addEventListener("submit", function (e) {
   botao.disabled = true;
 
   const templateParams = {
-    nome: selectNome.value === "sim" && nome.value ? nome.value : "Denúncia Anônima",
-    tipo: tipo.value,
-    empresa: empresa.value,
-    cnpj: cnpj.value || "Não informado",
-    descricao: descricao.value,
-    sugestao: sugestao.value || "Nenhuma sugestão enviada",
+    tipo: document.getElementById("tipoSituacao").value,
+    empresa: document.getElementById("empresa").value,
+    endereco: document.getElementById("endereco").value,
+    cnpj: document.getElementById("cnpj").value || "Não informado",
+    descricao: document.getElementById("descricao").value,
+    sugestao: document.getElementById("sugestao").value || "Não informado",
+    nome:
+      document.getElementById("informarNome").value === "sim"
+        ? document.getElementById("nome").value
+        : "Denúncia Anônima",
     data: new Date().toLocaleString("pt-BR"),
   };
 
@@ -60,7 +64,7 @@ form.addEventListener("submit", function (e) {
       botao.innerText = "Enviar Denúncia";
       botao.disabled = false;
       alert("Erro ao enviar. Tente novamente.");
-    }
+    },
   );
 });
 

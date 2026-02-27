@@ -203,3 +203,16 @@ button.loading::after {
   max-width: 100%;
   border-radius: 5px;
 }
+
+label:has(+ input[required]),
+label:has(+ textarea[required]),
+label:has(+ select[required]) {
+  position: relative;
+}
+
+label:has(+ input[required])::after,
+label:has(+ textarea[required])::after,
+label:has(+ select[required])::after {
+  content: " *";
+  color: #ef4444;
+}
