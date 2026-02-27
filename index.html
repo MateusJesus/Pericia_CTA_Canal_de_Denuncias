@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="shortcut icon" href="./logo.png" type="image/x-icon" />
+    <title>Canal de Denúncias</title>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content_logo">
+        <img src="./logo.png" />
+      </div>
+      <h1>Canal de Denúncias</h1>
+
+      <p>
+        Este canal foi criado para garantir um ambiente de trabalho ético,
+        seguro e respeitoso. Caso você tenha presenciado ou esteja enfrentando
+        qualquer situação relacionada a abuso, assédio, irregularidades ou
+        condutas inadequadas no ambiente profissional, utilize este espaço para
+        comunicar o ocorrido.
+        <br /><br />
+        Sua denúncia poderá ser realizada de forma anônima. Todas as informações
+        serão tratadas com confidencialidade e responsabilidade.
+      </p>
+
+      <form id="denunciaForm">
+        <label>Que tipo de situação você deseja relatar? *</label>
+        <select id="tipoSituacao" required>
+          <option value="">Selecione</option>
+          <option>Assédio Moral</option>
+          <option>Assédio Sexual</option>
+          <option>Agressão Verbal ou Física</option>
+          <option>Preconceito ou discriminação</option>
+          <option>Conduta imprópria (gritos, xingamentos, ameaças)</option>
+          <option>Uso de substâncias ilícitas no ambiente de trabalho</option>
+          <option>Outra</option>
+        </select>
+        <label>Nome da empresa:</label>
+        <input type="text" id="empresa" required />
+
+        <label>CNPJ da empresa (não obrigatório):</label>
+        <input type="text" id="cnpj" />
+        
+        <label>Descreva com detalhes o que aconteceu? *</label>
+        <textarea id="descricao" required></textarea>
+
+        <label>Deseja sugerir alguma ação ou medida?</label>
+        <textarea id="sugestao"></textarea>
+
+        <label>Deseja se identificar?</label>
+        <select id="informarNome">
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+
+        <div id="campoNome" class="hidden">
+          <label>Se sim, fique à vontade para se identificar:</label>
+          <input type="text" id="nome" />
+        </div>
+
+        <button type="submit">Enviar Denúncia</button>
+
+        <div class="success" id="mensagemSucesso"></div>
+      </form>
+    </div>
+
+    <div class="modal-overlay" id="modalSucesso">
+      <div class="modal">
+        <div class="check-icon">✔</div>
+        <h2>Denúncia Enviada</h2>
+        <p>
+          Sua denúncia foi registrada com sucesso.<br />Obrigado por contribuir
+          para um ambiente mais seguro.
+        </p>
+        <button onclick="fecharModal()">Fechar</button>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
